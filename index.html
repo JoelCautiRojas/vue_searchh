@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .search_custom{
+            width: 300px;
+            max-height: 120px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+        .search_custom > li{
+            width: 100%;
+        }
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+   <header></header>
+   <main id="main">
+       <input type="text" @keyup="busquedaAvanzada" v-model="producto">
+       <ul class="search_custom">
+           <li v-for="(item,index) of matrizProductosDisplay" @click="seleccionarProducto(item)">{{item.nombre}}</li>
+       </ul>
+   </main>
+   <footer></footer>
+    <script src="js/vue_local.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
